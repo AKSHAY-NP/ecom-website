@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_description %}
+    {% if category %}
+      {{category.description|truncatewords:150}}
+    {% else %}
+        Welcome to our shop  
+    {% endif %}
+{% endblock  %}
+    
+{% block title %}
+    {% if category %}
+      {{category.name}}
+    {% else %}
+        Product Page
+    {% endif %}
+{% endblock  %}
+
+{% block body %}
+{{category}}
+    {% if category %}
+      <div class="row my_class_row">
+        <div class="mx-auto">
+            <p><a href="{% url 'product:allproductcat' %}">Our Products</a></p>
+        </div>
+      </div> 
+    {% endif %}
+    <div>
+        {% if category %}
+            <div class="mx-auto">
+                <img class="my_img" src="{{category.image.url}}" alt="{{category.name}}">
+            </div><br>
+            <div>
+                <h1 class="text-center my title">{{category.name}}</h1>
+                <p class="text-justify">{{category.description}}</p>
+            </div>
+        {% else %}
+            <div>
+                <img class="my_img my_img_padding" src="{% static 'img/banner.jpg' %}" alt="banner" style="width: 100%; height: 500px;">
+            </div><br>
+            <div>
+                <h1 class="text-center my title">Our Products</h1>
+                <p class="text-justify">Loram initially acted as a contractor for railways, cleaning ballast on track beds. The rough edges of ballast rock not only supports the ties and holds them in place, it helps water drain away from the track bed. Over time, ballast becomes clogged with earth, weeds, and debris, inhibiting its drainage properties. Its major competitor in this field was Speno Rail Services (later owned by Pandrol-Jackson, and still later by Harsco Technologies).</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="container">
+        <div class="row mx-auto">
+            {% for product in products.object_list %}
+                <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card text-center" style="min-width: 18rem;">
+                        <a href="{{product.get_abs_url}}"><img class="card-img-top my_img" style="height: 350px;" src="{{product.image.url}}" alt="{{product.name}}"></a>
+                        <div class="card-body">
+                            <h4>{{product.name}}</h4>
+                            <p>{{product.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mx-auto">
+            {% if products.paginator.num_pages > 1 %}
+                <hr>
+                <div class="text-center">
+                    {% for i in products.paginator.page_range %}
+                        <a href="?page={{i}}" class="btn btn-light btn-sm {% if products.number == i %} active {% endif %}">{{i}}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div><br>
+    </div>
+{% endblock  %}

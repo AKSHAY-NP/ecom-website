@@ -1,0 +1,114 @@
+body{
+    font-family: 'IBM Plex Mono', monospace;
+}
+.nav-item,.dropdown-item{
+    letter-spacing: .2em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.my_footer {
+    background-color: rgb(15, 15, 15);
+    height: 100px;   
+}
+.my_footer p{
+    padding-top: 20px;
+    font-size: 14px;
+
+}
+
+.my_class_row{
+    padding-top: 15px;
+
+}
+
+.my_class_row .mx-auto{
+    color: black;
+    font-size: 14px;
+}
+
+.my_img{
+    width: 100%;
+    height: auto;
+}
+
+.my_title{
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+.my_img_padding{
+    padding: 5px;
+}
+
+.my_bottom_margin{
+    margin-bottom: 10px;
+}
+
+.card-body h4{
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+
+.my_prod_row{
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+}
+
+.my_prod_row .mx-auto{
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.my_prod_title{
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.my_prod_text{
+    padding-right: 20px;
+}
+
+
+
+.my_search{
+    padding-top: 20px;
+}
+
+
+
+.custom_table{
+    min-width: 400px;
+    font-size: 14px;
+}
+.custom_thead{
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    background-color: brown !important;
+}
+.custom_rounded {
+    border-radius: 15.25rem !important;
+    height: 90px;
+}
+
+.custom_a{
+    text-decoration: none;
+}
+
+.custom_icon{
+    text-decoration: none;
+    color: rgb(14, 122, 122) !important;
+}
+
+.custom_button{
+    margin-top: 5px;
+}
