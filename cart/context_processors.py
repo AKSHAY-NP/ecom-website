@@ -8,6 +8,8 @@ def counter(request):
             return {}
         else:
             cart=Cart.objects.filter(cart_id=cart_id(request)).first()
+            if not cart:
+                return dict(item_count=0)
             cart_items=CartItem.objects.filter(cart_id=cart.id).all()
             for item in cart_items:
                 item_count+=item.quantity
